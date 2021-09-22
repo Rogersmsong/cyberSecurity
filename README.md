@@ -32,7 +32,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
            - name: start filebeat service
              command: service filebeat start
- q
+ 
            - name: enable service filebeat on boot
              systemd:
                name: filebeat
