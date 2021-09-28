@@ -76,10 +76,10 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the jump machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: 99.234.202.177/32
+- 99.234.202.177/32
 
 Machines within the network can only be accessed by jump machine.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address? ELK VM can be accessed through jump machine and its IP is 10.0.0.4(private address). ELK machine private IP is 10.1.0.4 and its public IP is 137.135.60.32.
+- Which machine did you allow to access your ELK VM? What was its IP address? ELK VM can be accessed through jump machine and its IP is 10.0.0.4(private address). ELK machine private IP is 10.1.0.4 and its public IP is 137.135.60.32.
 
 A summary of the access policies in place can be found in the table below.
 
@@ -93,10 +93,10 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible? Multiple application instances can share the same configuration to reduce the manual input errors and improve the deployment efficiency.
+- What is the main advantage of automating configuration with Ansible? Multiple application instances can share the same configuration to reduce the manual input errors and improve the deployment efficiency.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
+- In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - install docker.io
 - install Python3 PIP
 - install Python docker module
@@ -129,7 +129,7 @@ SSH into the control node and follow the steps below:
 - Update the /etc/ansible/hosts file to include target servers (such as web-1 and web-2)
 - Run the playbook, and navigate to Kibana page (http://137.135.60.32:5601/app/kibana#/home) to check that the installation worked as expected. (Check if data is sent to ELK)
 
-_TODO: Answer the following questions to fill in the blanks:_
+Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on? Update /etc/ansible/roles/filebeat-playbook.yml and /etc/ansible/metricbeat-playbook.yml to prepare filebeat and metricbeat installation. The related configuration file is under /etc/ansbile/files and these files need to be updated to point to the correct ELK. Updating /etc/ansible/hosts file to define the target ELK, filebeat or metricbeat server IP and groups.
  
