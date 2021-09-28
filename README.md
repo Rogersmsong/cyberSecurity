@@ -136,3 +136,16 @@ Answer the following questions to fill in the blanks:_
 - _Which URL do you navigate to in order to check that the ELK server is running? http://137.135.60.32:5601/app/kibana#/home
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+
+In order to use ansible to deploy applications, usually it will need to do the followings:
+
+1. create and edit playbook file using any edit tools such as nano or vi
+2. prepare and update specific application related configuration file if requred using edit tools. and ensure the configuratoin file is located at the correct folder. This folder is also used in playbook file.
+3. Update hosts file to include the target deployment servers using edit tools such as nano or vi (such as nano /etc/ansible/hosts)
+4. Update ansible configuration file to use proper login user (such as nano /etc/ansible/ansible.cfg)
+5. Ensure target servers (under the specific server group) is reachable (example command: ansible webservers -m ping, to check all the servers under webservers group). The listed reachable servers in the ping command should be the ones you want to deploy the packages.  
+6. Ensure the download packages and version are correct and available. (example command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.1-amd64.deb, also ensure this package name match the name in the next yml install command)
+7. use online YAML tool to validate the playbook file format. (example: copy the play book content to https://onlineyamltools.com/validate-yaml to validate the content）
+8. After confirm the above steps, run ansible-playbook "playbook yml file" to install the package. (e.g. ansible-playbook metricbeat-playbook.yml under roles folder or provide the correct playbook path and file name)
+9. monitor the installation process to ensure there is no errors. or fix the error according to the listed errors.
+
